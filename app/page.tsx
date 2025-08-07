@@ -1,9 +1,8 @@
-import Nav from "@/app/components/nav";
-import Header from "@/app/components/header";
-import  Gallery from "@/app/components/gallery";
-import Infos from "@/app/components/infos";
-import Reservation from "@/app/components/reservation";
-import Footer from "@/app/components/footer";
+import Nav from "@/components/nav";
+import Header from "@/components/header";
+import  Services from "@/components/Services";
+import Infos from "@/components/infos";
+import Footer from "@/components/footer";
 
 
 export default function Home() {
@@ -13,9 +12,8 @@ export default function Home() {
       
         <Nav />
         <Header />
-        <Gallery/>
+        <Services/>
         <Infos surface={0} Wi-Fi={true} Bathrooms={10} Bedrooms={15} hasPool={true} hasKitchen={true} />
-        <Reservation />
         <Footer />
           
       </>
