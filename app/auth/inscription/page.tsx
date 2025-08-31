@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { FcGoogle } from 'react-icons/fc'
 import { FaFacebook, FaArrowLeft } from 'react-icons/fa'
 
-const SignupPage = () => {
+const SignupPage: React.FC = () => {
   const router = useRouter()
   const [formData, setFormData] = useState({
     email: '',
@@ -13,11 +13,11 @@ const SignupPage = () => {
     confirmPassword: '',
   })
 
-  const handleChange = (e: { target: { name: any; value: any } }) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = async (e: { preventDefault: () => void }) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (formData.password !== formData.confirmPassword) {
       alert("Les mots de passe ne correspondent pas")
@@ -37,7 +37,6 @@ const SignupPage = () => {
 
   return (
     <main className="relative w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 p-4">
-      
       {/* 🔹 Bouton CTA retour accueil fixé haut gauche */}
       <button
         onClick={() => router.push('/')}
@@ -87,6 +86,7 @@ const SignupPage = () => {
         <div className="space-y-4">
           {/* Connexion avec Google */}
           <button
+            type="button"
             onClick={() => signIn('google')}
             className="w-full flex items-center justify-center gap-3 border border-gray-300 rounded-xl py-3 hover:shadow-md transition-shadow"
           >
@@ -96,6 +96,7 @@ const SignupPage = () => {
 
           {/* Connexion avec Facebook */}
           <button
+            type="button"
             onClick={() => signIn('facebook')}
             className="w-full flex items-center justify-center gap-3 border border-gray-300 rounded-xl py-3 bg-blue-600 text-white hover:bg-blue-700 transition-colors"
           >
