@@ -11,9 +11,9 @@ export default function Nav() {
   const menuItems = [
     { label: "Accueil", href: "/" },
     { label: "Nos Villas", href: "/villas" },
-    { label: "Créer un compte", href: "/signup" },
-    { label: "Connexion", href: "/login" },
-    { label: "À propos", href: "/a-propos" },
+    { label: "Créer un compte", href: "auth/inscription" },
+    { label: "Connexion", href: "auth/connexion" },
+    { label: "À propos", href: "/about" },
   ];
 
   return (
@@ -26,7 +26,7 @@ export default function Nav() {
               <img
                 src="/images.png"
                 alt="Logo"
-                className="h-20 w-auto rounded-full"
+                className="h-25 w-auto rounded-full"
               />
             </Link>
             <Link href="/" className="text-xl font-bold text-gray-800">
